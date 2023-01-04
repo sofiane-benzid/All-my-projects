@@ -1,0 +1,129 @@
+body
+{
+    background-color: #FAFDF3;
+}
+#face
+{
+    clip-path: circle();
+    width: 75px;
+    margin-left: 75px;
+    margin-top: 40px;
+    display:inline-block
+}
+#info
+{
+   display:inline-block
+}
+.container{
+    display: flex;
+}
+#name{
+    margin-top: 50px;
+    margin-left: 15px;
+
+}
+#hello{
+    text-align: center;
+    color: #282828;
+    font-size: 1000%;
+    margin-top: 100px;
+}
+.info-text{
+    margin-top: 100px;
+    font-size: 120%;
+    text-align: center;
+}
+.nav-link:hover{
+    background-color: #515151;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    color: white;
+}
+.nav-link{
+    color: black;
+}
+nav-link.active {
+    color: red;
+}
+li{
+    margin:20px;
+}
+#element1{
+    margin-left:570px;
+    margin-top:25px;
+}
+#footer{
+    background-color: black;
+    color: white;
+    margin-top: 250px;
+}
+#copyright{
+    text-align: center;
+}
+#part{
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+footer{
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 300px;
+}
+.footer h3{
+    line-height: 3rem;
+}
+.socials{
+    list-style:none;
+    display: flex;
+    margin: 1rem 0 3rem 0;
+    justify-content: center;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    color: white;
+}
+.socials a:hover i{
+    color: grey;
+}
+#carouselExampleDark{
+    margin-top: 150px;
+}
+.link1{
+    color:black;
+}
+.link2{
+    color:black;
+}
+.link3{
+    color:black;
+}
+.link1:hover{
+    color:gray;
+}
+.link2:hover{
+    color:gray;
+}
+.link3:hover{
+    color:gray;
+}
+.accordion{
+    margin-top: 150px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+#result{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+h6{
+    text-align: center;
+}
