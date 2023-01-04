@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia - {{titre}}
+{% endblock %}
+
+{% block body %}
+        
+        {% if title == None %}
+            <h1>Error 404:</h1> Request page was not found.
+        {% else %}
+
+        {{title | safe}}<br><br>
+
+        {% endif %}        
+        
+
+        <form action="{% url 'edit' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="text" value="{{title}}">
+            <input type="hidden" name="title" value="{{titre}}">
+            <input type="submit" value="Edit">
+        </form>
+    
+{% endblock %}

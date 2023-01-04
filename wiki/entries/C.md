@@ -1,0 +1,1 @@
+C is an awesome programming language that is a bit hard
