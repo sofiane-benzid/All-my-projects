@@ -1,0 +1,31 @@
+a {
+    float: right;
+    padding: 10px;
+}
+.search {
+    text-align:center;
+    padding:92px;
+}
+.button {
+    margin-top: 20px;
+}
+#mainsearch{
+    border-radius:50px;
+    height: 35px;
+}
+#advanced{
+    padding: 50px;
+}
+.advancedbutton{
+    margin-left:282px;
+}
+#advancedbutton{
+    background-color:royalblue;
+    color: white;
+}
+#img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}

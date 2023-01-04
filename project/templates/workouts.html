@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Workouts
+{% endblock %}
+
+{% block main %}
+<form action="/editworkout" method="post">
+  <h1>{{name}}</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Add</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Saturday</th>
+            <td>{{ i_saturday[0]['saturday']}}</td>
+            <form action="/workouts/saturday" method="post">
+            <td><button type="submit" class="btn btn-warning" name="edit" value="saturday">Edit</button></td>
+          </form>
+            <form action="/workouts/saturday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="saturday">Exercises</button></td>
+            </form>
+          </tr>
+          <tr>
+            <th scope="row">Sunday</th>
+            <td>{{ i_sunday[0]['sunday']}}</td>
+            <td><button type="submit" class="btn btn-warning" name="edit" value="sunday">Edit</button></td>
+            <form action="/workouts/sunday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="sunday">Exercises</button></td>
+            </form>
+          </tr>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>{{ i_monday[0]['monday']}}</td>
+            <td><button type="submit" class="btn btn-warning" name="edit" value="monday">Edit</button></td>
+            <form action="/workouts/monday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="monday">Exercises</button></td>
+            </form>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td>{{ i_tuesday[0]['tuesday']}}</td>
+            <td><button type="submit" class="btn btn-warning" name="edit" value="tuesday">Edit</button></td>
+            <form action="/workouts/tuesday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="tuesday">Exercises</button></td>
+            </form>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td>{{ i_wednesday[0]['wednesday']}}</td>
+            <td><button type="submit" class="btn btn-warning" name="edit" value="wednesday">Edit</button></td>
+            <form action="/workouts/wednesday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="wednesday">Exercises</button></td>
+            </form>
+          </tr>
+          <tr>
+            <th scope="row">Thursday</th>
+            <td>{{ i_thursday[0]['thursday']}}</td>
+            <td><button type="submit" class="btn btn-warning" name="edit" value="thursday">Edit</button></td>
+            <form action="/workouts/thursday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="thursday">Exercises</button></td>
+            </form>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td>{{ i_friday[0]['friday']}}</td>
+            <td><button type="submit" class="btn btn-warning" name="edit" value="friday">Edit</button></td>
+            <form action="/workouts/friday" method="post">
+              <td><button type="submit" class="btn btn-warning" name="addexercise" value="friday">Exercises</button></td>
+            </form>
+          </tr>
+        </tbody>
+      </table>
+</form>
+<form action="/deleteworkout" method="post">
+<button name="deleteworkout" type="submit" class="btn btn-warning" style="margin-top:45px;"><b>Delete workout</b></button>
+</form>
+{% endblock %}

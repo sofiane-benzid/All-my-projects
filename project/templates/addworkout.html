@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    workout
+{% endblock %}
+
+{% block main %}
+<form action="/workouts" method="post">
+    <h3>Fill in the workout name:</h3>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Workout name" type="text">
+    </div><hr>
+    <h3>In this section fill the fields with what you are going to workout (EX: Chest / biceps and triceps / push etc...) on a given day:</h3>
+    <p >If you have a break on a given day, fill it with "/"</p>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="saturday" placeholder="Saturday" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="sunday" placeholder="Sunday" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="monday" placeholder="Monday" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="tuesday" placeholder="Tuesday" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="wednesday" placeholder="Wednesday" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="thursday" placeholder="Thursday" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="friday" placeholder="Friday" type="text">
+    </div>
+    
+
+    <button type="submit" class="btn btn-warning"><b>Add workout</b></button>
+</form>
+{% endblock %}

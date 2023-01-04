@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Graph
+{% endblock %}
+
+{% block main %}
+<canvas id="chart" width="900" height="400"></canvas>
+<script>
+    var ctx = document.getElementById("chart").getContext("2d");
+    var chart = new Chart (ctx, {
+        type:"line",
+        data: {
+            labels: {{values | safe}},
+            datasets: [
+                {
+                    label: "Weight Lifted (KG) / TIME",
+                    data: {{labels | safe}},
+                    fill : false,
+                    borderColor: "rgb(255, 148, 112)",
+                    lineTension: 0.1
+
+                }
+            ]
+        },
+        options: {
+            responsive: false
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form action="/greet" method="post">
+    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+    <select>
+        <option disable>Sport</option>
+        <option>Basketball</option>
+        <option>Football</option>
+        <option>pussy slaughtering</option>
+    </select>
+</form>
+
+{% endblock %}

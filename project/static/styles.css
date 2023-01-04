@@ -1,0 +1,59 @@
+.navbar {
+    height: 80px !important;
+}
+.navbar-brand {
+    margin-left: 100px;
+    margin-top: 10px;
+    font-family: "MS Gothic";
+}
+.orange{
+    color: #FF8000;
+}
+.brand{
+    font-size: 2vw;
+}
+#logo
+{
+    margin-top: -15px;
+}
+.navbar-nav .nav-item .nav-link {
+    color: white;
+}
+.navbar-nav .nav-item:hover .nav-link {
+    color: #FF8000;
+}
+.btn-warning {
+    background-color: #FF8000 !important;
+}
+.form-control:focus {
+    border-color: #FFAE00 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 148, 112,1);
+}
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 50px;
+}
+.myDiv{
+	display:none;
+}
+.form-select:focus {
+    border-color: #FFAE00 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 148, 112,1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

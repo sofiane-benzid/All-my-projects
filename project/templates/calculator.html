@@ -1,0 +1,211 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculators
+{% endblock %}
+
+{% block main %}
+<form method="post" action="/calculators">
+    <button class="btn btn-warning" name="submit_button" value="Body fat calculator">Body fat calculator</button>
+    <button class="btn btn-warning" name="submit_button" value="Calories burned calculator">Calories calculator</button>
+    <button class="btn btn-warning" name="submit_button" value="Protein calculator">Protein calculator</button>
+</form>
+{% if bodyfat %}
+<form method="post" action="/bodyfat">
+    <div class="card border-warning mb-3" style="max-width: 18rem;">
+      <div class="card-header">Body Fat Calculator</div>
+      <div class="card-body">
+        <h5 class="card-title">Please enter the details to calculate body fat percentage:</h5>
+        <label>Enter sex:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="Male" checked>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="Female">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+          </div>
+
+       <br>
+       <label>Height:</label>
+       <input type="number" name="height" placeholder="cm">
+       <br><br>
+       <label>Neck:</label>
+       <input type="number" name="neck" placeholder="cm">
+       </br><br>
+       <label>Waist:</label>
+       <input type="number" name="waist" placeholder="cm">
+       <br><br>
+       <input type="submit" name="submit_button" value="Calculate">
+      </div>
+      </div>
+    </div>
+      </div>
+    </div>
+{% elif bodyfatresult %}
+    {% if sex == 'Male' %}
+    <div class="card border-warning mb-3" style="max-width: 18rem;">
+      <div class="card-header">Your body fat results are:</div>
+      <h5 class="card-title"><b>{{result}}%</b></h5>
+      <img src="/static/body-fat-man.png">
+    {% elif sex == 'Female' %}
+    <div class="card border-warning mb-3" style="max-width: 18rem;">
+      <div class="card-header">Your body fat results are:</div>
+      <h5 class="card-title"><b>{{result}}%</b></h5>
+      <img src="/static/body-fat-woman.png">
+      {% endif %}
+
+
+
+{% elif calories%}
+<form method="post" action="/calories">
+  <div class="card border-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">Calories Calculator</div>
+    <div class="card-body">
+      <h5 class="card-title">Please enter the details to calculate the number of calories you need to consume each day:</h5>
+      <label>Enter sex:</label>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="Male" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="Female">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+
+     <br>
+     <label>Age:</label>
+     <input type="number" name="age">
+     <br><br>
+     <label>Height:</label>
+     <input type="number" name="height" placeholder="cm">
+     </br><br>
+     <label>Weight:</label>
+     <input type="number" name="weight" placeholder="kg">
+     <br><br>
+     <select class="form-select" aria-label="Default select example" name = "activity">
+      <option selected disabled>Choose your activity</option>
+      <option value="1">Little to no exercise</option>
+      <option value="2">Exercise 1-3 times a week</option>
+      <option value="3">Exercise 4-5 times a week </option>
+    </select>
+
+     <input type="submit" name="submit_button" value="Calculate">
+    </div>
+    </div>
+  </div>
+    </div>
+  </div>
+{% elif calorieresult %}
+<p><div class="card border-warning mb-3" style="max-width: 18rem;">
+  <div class="card-header">Daily calorie intake:</div>
+  <h5 class="card-title"><table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Calories/Day</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-info">
+        <th scope="row">Maintain Weight</th>
+        <td >{{ result }}</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Mild weight loss
+          <sub>0.25 kg/week</sub></th>
+        <td>{{ (87 * result)/100 }}</td>
+      </tr>
+      <tr class="table-warning">
+        <th scope="row">Weight loss
+          <sub>0.5 kg/week</sub></th>
+        <td> {{ (73 * result)/100 }}</td>
+      </tr>
+      <tr class="table-danger">
+        <th scope="row">Extreme weight loss
+          <sub>1 kg/week</sub></th>
+        <td> {{ (46 * result)/100 }}</td>
+      </tr>
+    </tbody>
+  </table></h5>
+{% elif protein %}
+<form method="post" action="/protein">
+  <div class="card border-warning mb-3" style="max-width: 18rem;">
+    <div class="card-header">Calories Calculator</div>
+    <div class="card-body">
+      <h5 class="card-title">Please enter the details to calculate the number of grams of protein you need to consume each day:</h5>
+      <label>Enter sex:</label>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault1" value="Male" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" id="flexRadioDefault2" value="Female">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+
+     <br>
+     <label>Age:</label>
+     <input type="number" name="age">
+     <br><br>
+     <label>Height:</label>
+     <input type="number" name="height" placeholder="cm">
+     </br><br>
+     <label>Weight:</label>
+     <input type="number" name="weight" placeholder="kg">
+     <br><br>
+     <select class="form-select" aria-label="Default select example" name = "activity">
+      <option selected disabled>Choose your activity</option>
+      <option value="1">Little to no exercise</option>
+      <option value="2">Exercise 1-3 times a week</option>
+      <option value="3">Exercise 4-5 times a week </option>
+    </select>
+
+     <input type="submit" name="submit_button" value="Calculate">
+    </div>
+    </div>
+  </div>
+    </div>
+  </div>
+{% elif proteinresult %}
+<p><div class="card border-warning mb-3" style="max-width: 18rem;">
+  <div class="card-header">Daily protein intake:</div>
+  <h5 class="card-title"><table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Grams/Day</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-info">
+        <th scope="row">Maintain Weight</th>
+        <td >{{ result - 50 }}</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Weight loss</th>
+        <td>{{ (87 * result)/100 }}</td>
+      </tr>
+      <tr class="table-warning">
+        <th scope="row">Weight gain</th>
+        <td> {{ (73 * result)/100 + 57}}</td>
+      </tr>
+    </tbody>
+  </table></h5>
+  <p>The reason both weight loss and weight gain protein intake increases is because with weight loss you must increase protein intake and decrease calorie intake, however with weight gain both protein intake and calories must be increased.</p>
+
+{% endif %}
+
+{% endblock %}

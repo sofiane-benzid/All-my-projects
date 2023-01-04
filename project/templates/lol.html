@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calculators
+{% endblock %}
+
+{% block main %}
+<h1>{{day}}</h1>
+<form action="/placeholder" method="post">
+    <button type="submit" class="btn btn-warning" name="{{day}}" value="xd"><b>Add exercise</b></button>
+</form>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Exercise</th>
+        <th scope="col">Targeted muscles</th>
+        <th scope="col">Sets</th>
+        <th scope="col">Reps</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in info %}
+      <tr>
+        <th scope="row">{{x['name']}}</th>
+        <td>{{x['muscles']}}</td>
+
+        <form action="/setsreps" method="post">
+          <td><input type="number" name="sets"></td>
+          <td><input type="number" name="reps"></td>
+          <td><input type="number" name="weight" placeholder="kg"></td>
+          <td><button type="submit" class="btn btn-warning" name="{{day}}" value="{{x['id']}}">Submit</td>
+          </form>
+            <form action="/deleteexercise" method="post">
+              <td><button type="submit" class="btn btn-warning" name="{{day}}" value="{{x['id']}}"><b>Delete exercise</b></button></td>
+            </form>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

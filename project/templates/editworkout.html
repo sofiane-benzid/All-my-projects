@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Workouts
+{% endblock %}
+
+{% block main %}
+<form action="/edited" method="post">
+    <h3>Edit "{{day}}" of "{{saturday}}" to:</h3>
+<div class="mb-3">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="newedit" type="text">
+</div>
+<button type="submit" class="btn btn-warning" name="edit" value="{{saturday}}"><b>Confirm</b></button>
+</form>
+
+{% endblock %}
